@@ -1,0 +1,57 @@
+<template>
+  <table class="slds-table slds-table_header-hidden slds-table_bordered slds-table_edit slds-tree slds-table_tree"
+    role="treegrid" aria-label="Example headless single select tree grid">
+    <thead class="slds-assistive-text">
+      <tr class="slds-line-height_reset">
+        <th class="" scope="col">
+          <div class="slds-th__action">
+            <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+              <span class="slds-truncate" title="Account Name">Account Name</span>
+            </div>
+          </div>
+        </th>
+        <th class="" scope="col" style="width:3.25rem">
+          <div class="slds-truncate slds-assistive-text" title="Actions">Actions</div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr key={row.keyId} for:each={rows} for:item="row" aria-expanded="false" aria-level="1" aria-posinset="2"
+        aria-setsize="4" class="slds-hint-parent">
+        <th class="slds-tree__item" data-label="Name" scope="row">
+          <lightning-button-icon onclick={handleClickAccordion} class="slds-button_icon-x-small slds-m-right_x-small"
+            aria-hidden="true" icon-name={iconName} variant="bare"
+            alternative-text="Expandir informações"></lightning-button-icon>
+          <div class="slds-truncate">
+
+          </div>
+        </th>
+        <td role="gridcell" style="width:3.25rem">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</template>
+
+<!--template>
+  <div class="slds-m-bottom_small">
+      <lightning-button label="Collapse All" onclick={clickToCollapseAll}>
+      </lightning-button>
+  </div>
+
+  <div class="slds-m-bottom_small">
+      <lightning-button label="Get Expanded" onclick={clickToGetExpanded}>
+      </lightning-button>
+      <p>Expanded currently : {currentExpandedStr}</p>
+  </div>
+
+  <lightning-tree-grid
+      data={gridData}
+      columns={gridColumns}
+      key-field="keyId"
+      expanded-rows={currentExpanded}
+      hide-checkbox-column
+  >
+  </lightning-tree-grid>
+</template>
+<!-->
